@@ -49,7 +49,7 @@ output_file = File.new(output_filename, 'w')
   (1..number_of_columns).each {|col_num|
       if col_num == 1
         output_file.print(lines[line_num], ' '*space_width)
-      elsif 
+      else
 	    output_file.print(lines[line_num+(total_lines_per_col*(col_num-1))], ' '*space_width)
       end
     }
