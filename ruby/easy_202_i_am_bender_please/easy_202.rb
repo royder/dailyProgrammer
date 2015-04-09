@@ -2,9 +2,9 @@
 # http://www.reddit.com/r/dailyprogrammer/comments/2w84hl/20150216_challenge_202_easy_i_am_bender_please/
 
 =begin
-GOAL: Take input that is a continuous binary string and convert it to ASCII.
-Example Input: "0100100001100101011011000110110001101111001000000101011101101111011100100110110001100100"
+GOAL: Take inputs that results in a continuous binary string and convert it to ASCII.
+Example Input: "01001000011001010110110001101100011 011110010000001010111011011110111 00100110110001100100"
 Example Output: "Hello World"
 =end
 
-puts ARGV.pack('B*')
+puts ARGV.join('').split(' ').pack('B*')
