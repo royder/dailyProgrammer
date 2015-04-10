@@ -19,9 +19,9 @@ class Window < Gosu::Window
   def draw
     color = Gosu::Color.argb(0xffff0000)
     draw_line(100, 100, color, 100, 300, color)
-	draw_line(100, 300, color, 300, 300, color)
-	draw_line(300, 300, color, 300, 100, color)
-	draw_line(300, 100, color, 100, 100, color)
+    draw_line(100, 300, color, 300, 300, color)
+    draw_line(300, 300, color, 300, 100, color)
+    draw_line(300, 100, color, 100, 100, color)
   end
 end
 
