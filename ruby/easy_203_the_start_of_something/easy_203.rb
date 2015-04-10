@@ -13,7 +13,7 @@ require 'gosu' # https://github.com/jlnr/gosu
 class Window < Gosu::Window
   def initialize
     super 400, 400, false
-	self.caption = 'Square'
+    self.caption = 'Square'
   end
 
   def draw
