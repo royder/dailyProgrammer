@@ -1,8 +1,8 @@
 Speed limit is 60.00 mph.
-Speed camera number 1 is 0 meters down the motorway.
-Speed camera number 2 is 600 meters down the motorway.
-Speed camera number 3 is 855 meters down the motorway.
-Speed camera number 4 is 1355 meters down the motorway.
+Speed camera number 1 is 0 metres down the motorway.
+Speed camera number 2 is 600 metres down the motorway.
+Speed camera number 3 is 855 metres down the motorway.
+Speed camera number 4 is 1355 metres down the motorway.
 Start of log for camera 1.
 Vehicle G122 IVL passed camera 1 at 09:36:12.
 Vehicle H151 KEE passed camera 1 at 09:36:15.

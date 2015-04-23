@@ -17,17 +17,23 @@ end
 
 File.open(filepath, 'r') {|file|
   file.each_line {|line|
-    cameras = {}
+    cameras_distances = Hash.new
+    vehicles = Hash.new{|h,k| h[k]=[]}
     case
     when line.start_with?('Speed limit')
-      /(?<speed_limit>\d+\.\d+)\s(?<speed_unit>mph|kh)/ =~ line
+      /Speed limit is (?<speed_limit>[1-9][0-9]\.[0-9]{2}) (?<speed_unit>mph|kmh)\./ =~ line
       puts speed_limit
       puts speed_unit
     when line.start_with?('Speed camera number')
-      /(?<camera_num>\d).(?<camera_distance>\d+)\s(?<camera_distance_units>\w+)/ =~ line
-      puts camera_num
-      puts camera_distance
-      puts camera_distance_units
+      /Speed camera number (?<camera_num>[1-9]) is (?<camera_distance>0|[1-9][0-9]{0,3}) metres down the motorway\./ =~ line
+      cameras_distances[camera_num] = camera_distance.to_i
+      puts cameras_distances.inspect
+    when line.start_with?('Start of log for')
+      next 
+    when line.start_with?('Vehicle')
+      /Vehicle (?<vehicle_id>[0-9A-Z]{1,4} [0-9A-Z]{1,4}) passed camera (?<camera_num>[1-9]) at (?<time>[0-9]{2}:[0-9]{2}:[0-9]{2})\./ =~ line
+      vehicles[vehicle_id.gsub(/\s/,'')] << [camera_num, time]
+      puts vehicles.inspect
     else
       puts 'no match'
     end
